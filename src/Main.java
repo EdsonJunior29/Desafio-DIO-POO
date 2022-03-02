@@ -1,3 +1,4 @@
+import br.com.dio.desafio.dominio.Conteudo;
 import br.com.dio.desafio.dominio.Curso;
 import br.com.dio.desafio.dominio.Mentoria;
 
@@ -11,17 +12,23 @@ public class Main {
         Curso curso1 = new Curso();
         curso1.setTitulo("Curso Java");
         curso1.setDescricao("Curso de indrodução da linguagem Java.");
-        curso1.setCargaHoraria(12);
+        curso1.setCargaHoraria(10);
 
-        Curso curso2 = new Curso();
+        Conteudo curso2 = new Curso();
         curso2.setTitulo("Curso Angular");
         curso2.setDescricao("Curso de indrodução ao Angular");
-        curso2.setCargaHoraria(8);
+        ((Curso) curso2).setCargaHoraria(8);
+        System.out.println("XP atualizado: " + curso2.calcularXp());
 
         Mentoria mentoria = new Mentoria();
 
         mentoria.setTitulo("Mentoria Java");
         mentoria.setDescricao("Aprendendo Java");
+        mentoria.setData(LocalDate.now());
+
+        Conteudo mentoria2 = new Mentoria();
+        mentoria.setTitulo("Mentoria Angular");
+        mentoria.setDescricao("Aprendendo Angular");
         mentoria.setData(LocalDate.now());
 
         System.out.println(curso1);
